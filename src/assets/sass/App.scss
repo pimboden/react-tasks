@@ -1,0 +1,133 @@
+@import "fonts";
+@import "colors";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+  @mixin centered{
+    @apply flex items-center justify-center;
+  }
+  @mixin font-popins-normal{
+    @apply font-poppins font-normal not-italic
+  }
+  
+  @mixin font-popins-bold{
+    @apply font-poppins font-black not-italic
+  }
+  @mixin font-popins-normal-italic{
+    @apply font-poppins font-normal italic
+  }
+  @mixin font-popins-bold-italic{
+    @apply font-poppins font-black italic
+  }
+  .popins-normal{
+    @include font-popins-normal
+  }
+  .popins-bold{
+    @include font-popins-bold
+  }
+  .popins-normal-italic{
+    @include font-popins-normal-italic
+  }
+  .popins-normal-bold-italic{
+    @include font-popins-bold-italic
+  }
+
+
+.centered {
+  @include centered;
+}
+
+a{
+  @apply text-hslu_dark_blue;
+}
+
+* {
+  @apply box-border m-0 p-0;
+}
+
+/* sources https://unsplash.com/photos/c9OCWLka764 */
+body {
+    @include font-popins-normal;
+    @include centered;
+    @apply flex-col min-h-screen bg-hslu_dark_grey;  
+}
+
+.container-1 {
+  @apply container my-px mx-auto overflow-auto border border-solid border-hslu_dark_blue p-1 bg-hslu_dark_grey ;
+  min-height: 300px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  @apply inline-block bg-hslu_lighter_blue hover:bg-hslu_dark_blue text-hslu_black py-2 px-5 m-1 cursor-pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.task {
+  @apply bg-hslu_light_blue m-1 py-2 px-5 cursor-pointer;
+}
+
+.task.reminder {
+  border-left: 5px solid green;
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+h1,h3,p,label {
+  @apply text-hslu_black;
+}
+
+
+
+.logo {
+  color: white;
+  font-family: Sail;
+}
+
+
+
+
+h1{
+  padding: 1vh;
+}
+
+@media screen and (max-width: 992px) {
+
+}
+
+#logo{
+  max-height: 100px;
+}
+
+}
